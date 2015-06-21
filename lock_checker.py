@@ -1,4 +1,5 @@
-import os, fcntl
+#!/usr/bin/env python
+import os, fcntl, sys
 
 LOCKED = True
 UNLOCKED = False
@@ -7,7 +8,13 @@ class LockChecker(object):
 	initial_directory = ''
 
 	def __init__(self):
-		self.initial_directory = os.getcwd()
+		if len(sys.argv)>2:
+			print "Can accept only one root directory"
+			exit(1)
+		elif len(sys.argv)==2:
+			self.initial_directory = sys.argv[1]
+		else:
+			self.initial_directory = os.getcwd()
 
 	def _generate_all_filepaths(self):
 		filepaths = []
@@ -37,5 +44,6 @@ class LockChecker(object):
 				locked_list.append(single_file)
 		return locked_list
 
-lockChecker = LockChecker()
-print lockChecker.what_is_locked()
+if __name__ == '__main__':
+	lockChecker = LockChecker()
+	print lockChecker.what_is_locked()
