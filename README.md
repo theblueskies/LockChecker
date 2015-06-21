@@ -16,7 +16,7 @@ TEST IT:
 
 2a. Fire it up on the terminal: python helper_locker.py
 2b. On another tab of the terminal run: ./lock_checker.py
-2c. You should get the output of "file2.txt"
+2c. You should get the output of the relative path of "file2.txt" (Eg: YouAsUser/Documents/LockChecker/TestData/file2.txt")
 
 
 HOW TO RUN THE LOCK CHECKER
