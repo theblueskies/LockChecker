@@ -1,0 +1,3 @@
+LOCKED = True
+UNLOCKED = False
+DOES_NOT_EXIST = None
