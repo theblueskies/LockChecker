@@ -46,7 +46,7 @@ class TestLockList(unittest.TestCase):
 
 		lock_checker = LockChecker()
 		generated_output = lock_checker.what_is_locked()
-		expected_output = ['/home/bladerunner/Documents/mesosphereProject/Locker/LockChecker/TestData/file1.txt', '/home/bladerunner/Documents/mesosphereProject/Locker/LockChecker/TestData/file2.txt']
+		expected_output = [os.path.join(os.getcwd(), 'LockChecker/TestData/file1.txt'), os.path.join(os.getcwd(), 'LockChecker/TestData/file2.txt')]
 		self.assertEqual(generated_output,expected_output)
 
 		instance1.release_lock()
