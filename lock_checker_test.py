@@ -35,18 +35,21 @@ class CaptureLock(object):
 class TestLockList(unittest.TestCase):
 
 	def test_lock(self):
+		#Get Lock on file1.txt
 		instance1 = CaptureLock()
 		filename1 = os.path.join(os.getcwd(), 'TestData/file1.txt')
 		instance1.capture_lock(filename1)
 
+		#Get Lock on file2.txt
 		instance2 = CaptureLock()
 		filename2 = os.path.join(os.getcwd(), 'TestData/file2.txt')
 		instance2.capture_lock(filename2)
 
-
+		#Examine locked files
 		lock_checker = LockChecker()
 		generated_output = lock_checker.what_is_locked()
-		expected_output = [os.path.join(os.getcwd(), 'LockChecker/TestData/file1.txt'), os.path.join(os.getcwd(), 'LockChecker/TestData/file2.txt')]
+		expected_output = [os.path.join(os.getcwd(), 'TestData/file1.txt'), os.path.join(os.getcwd(), 'TestData/file2.txt')]
+		
 		self.assertEqual(generated_output,expected_output)
 
 		instance1.release_lock()
