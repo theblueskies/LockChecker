@@ -2,7 +2,7 @@
 import os, fcntl
 import unittest, time
 from Constants import DOES_NOT_EXIST
-from lock_checker import LockChecker
+from lslock import LockChecker
 
 class CaptureLock(object):
 	fila=''
