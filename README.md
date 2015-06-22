@@ -25,7 +25,7 @@ HOW TO RUN THE LOCK CHECKER
 2. To check for locks in a random_directory, run: ./lock_checker.py random_directory
 3. You can import the class and call the public function what_is_locked() to get a list of locked files. As before, you can specify a random location too
 4. The function what_is_locked() can take either a directory or specific filename. It defaults to the current working directory of the file 
-
+5. It returns a list of tuples : [(file, PID of process locking the file)]
 
 NOTES:
 ====================================================================================
@@ -34,5 +34,5 @@ NOTES:
 3. An invalid directory or filename supplied as command line argument will throw a message and exit
 4. If no command line arguments are supplied, it will recursively check for locks in its current working directory and subdirectories
 5. Test coverage done
-6. It returns a list (of files). If no files are locked (or a specific file being searched for is unlocked) then it returns an empty list
+6. It returns a list of tuples(files, process_ID of what has locked the file). If no files are locked (or a specific file being searched for is unlocked) then it returns an empty list.
 
