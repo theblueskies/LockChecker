@@ -7,7 +7,9 @@ HOW TO GET IT:
 Steps:
 1. Clone the repo to your desired directory: git clone https://github.com/theblueskies/LockChecker
 2. cd into LockChecker. If you do an "ls" it should show up as "LockChecker"
-
+3. Run this command: python setup.py install
+   #Depending on the restrictiveness of your system, you might have to run:
+	python setup.py install --user
 
 TEST IT:
 ====================================================================================
